@@ -1,0 +1,44 @@
+# xhs-sync 配置文件（模板）
+# 第一次使用：复制一份改名为 config.toml（setup.sh 会自动复制），再填写下面的 vault_path。
+# 以 # 开头的行是注释，不会生效。改完保存即可，不需要重启任何东西。
+
+# 你的 Obsidian Vault（仓库）路径，必填。
+# 用 ~ 开头表示「当前用户的个人文件夹」。不知道路径的话：在 Finder 里找到 Vault 文件夹，
+# 把它拖进「终端」窗口，就会显示完整路径。常见的例子：
+#   存在 iCloud 里：~/Library/Mobile Documents/iCloud~md~obsidian/Documents/<你的Vault名>
+#   存在本机：      ~/Documents/<你的Vault名>
+vault_path = ""
+
+# 在 Vault 里使用的根目录名。笔记会写到 <Vault>/RedNote/Bookmarks/，媒体写到 <Vault>/RedNote/Media/
+root_dir = "RedNote"
+
+# 每次运行最多同步多少篇
+max_notes_per_run = 20
+
+# 打开两篇详情页之间的随机等待时间（秒），在最小值和最大值之间随机取
+delay_min_seconds = 20
+delay_max_seconds = 40
+
+# 视频清晰度："lowest"（最低，文件最小）或 "highest"（最高）。
+# 不管选哪个，都只在「带声音」的版本里挑，保证能提取音轨转文字。
+video_quality = "lowest"
+
+# 在 Obsidian 里删掉笔记后，同步时自动把它的图片/视频移到废纸篓（可以在废纸篓里找回）
+auto_clean_media = true
+
+# 浏览器资料目录，用来保存登录状态。一般不用改
+profile_dir = "~/.xhs-sync/profile"
+
+# 同步结束后，自动把新视频的语音转成文字稿（放在笔记里视频下方，默认折叠）。
+# 完全在本机转录，不上传任何东西。也可以单独运行：.venv/bin/python transcribe.py
+auto_transcribe = true
+
+# 视频说的是什么语言："zh"（中文，输出简体）、"en"（英文）或 "auto"（自动识别）
+transcribe_language = "zh"
+
+# 语音识别模型文件（setup.sh 会自动下载）。一般不用改
+whisper_model = "~/.xhs-sync/models/ggml-large-v3-turbo.bin"
+
+# 日常同步时是否隐藏浏览器窗口。
+# 如果无界面模式下频繁遇到验证或异常，可以改成 false，用有界面模式运行。
+headless = true

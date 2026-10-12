@@ -1,0 +1,13 @@
+.venv/
+debug/
+__pycache__/
+state.json
+last-scheduled-run.txt
+paused.txt
+
+# 个人信息，不上传
+config.toml
+CLAUDE.md
+.claude/
+promo/
+.DS_Store

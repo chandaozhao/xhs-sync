@@ -4,6 +4,8 @@
 
 收藏夹里的笔记会被删、会找不到，视频也只能一个个点开看。xhs-sync 把它们变成你自己硬盘上的 Markdown 笔记：能搜索、能打标签、原笔记删了也还在；视频的文字稿就放在笔记里，不开声音也能「看」。
 
+> 💡 思路来自小红书博主 **unintended.ai**（小红书号：1511342664）开源的 Obsidian 插件 [xhs2obsidian](https://github.com/unintended0x/xhs2obsidian)。本项目是照着这个思路，用 Claude Code vibe coding 出来的独立实现（Python 脚本），另外加上了视频本地转文字稿和定时防风控。感谢原作者的开源分享！
+
 > ⚠️ 这是个人备份工具：只保存你自己账号的收藏，内容版权归原作者，请勿二次传播或商用。自动化访问可能不符合平台规则，请自行评估风险。
 
 ## 功能
@@ -113,6 +115,11 @@
 - 只支持 macOS。
 - 语音识别会有错别字；背景音乐里的歌词也会被转出来。
 - 小红书页面改版可能导致失效，需要根据新的页面结构调整（可以先用 `explore.py` 看真实数据）。
+
+## 致谢
+
+- [xhs2obsidian](https://github.com/unintended0x/xhs2obsidian)（小红书博主 unintended.ai）：本项目的思路来源，`RedNote/Bookmarks` 目录结构和笔记属性也沿用了它的约定。
+- [whisper.cpp](https://github.com/ggml-org/whisper.cpp)、[Playwright](https://playwright.dev)、[ffmpeg](https://ffmpeg.org)、[Obsidian](https://obsidian.md)。
 
 ## License
 
